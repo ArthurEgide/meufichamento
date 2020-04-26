@@ -1,0 +1,14 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Solução Web para o hackaton",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": "16.13.1"
+  },
+  "author": "Arthur Egide, Wellington Manfrin",
+  "license": "ISC"
+}

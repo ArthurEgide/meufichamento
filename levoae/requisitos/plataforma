@@ -1,0 +1,21 @@
+Web
+
+Publico alvo: Empresas
+
+# Conta
+Cadastrar e Acessar conta
+Recuperar Conta
+Modificar Conta
+Cadastrar e modificar endereços de filiais
+
+# Principal
+Cadastrar pontos de entrega
+- Nome cliente, endereço, ponto de referencia, identificador do pacote
+Cadastrar prioridade forçada dos pontos de entrega(optar por escolher a ordem de entrega)
+Visualizar o preço que será pago por cliente
+Acompanhar o motoboy em entrega( Simples como cliente x/y à z minutos dele.Ex: cliente 3/4 à 3km de distância )
+Visualizar a finalização de entrega do motoboy
+
+# Histórico [2º instância]
+Visualizar protocolos de entrega
+- Protocolo, tempo de pedido, tempo de espera do entregador, cliente(nome, produto, valor, telefone, custo entrega), custo entrega do protocolo

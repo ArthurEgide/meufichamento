@@ -1,0 +1,32 @@
+Servidor
+
+Considerem todas as funções sendo uma comunicação entre o client citado e a função citada.
+
+[Fluxo de pedido]
+# Plataforma 
+Criar rota entre 2 pontos
+- Receber ponto 1
+- Receber ponto 2
+Calcular distância e valor da rota
+Gerir uma lista de rotas
+Gerar a melhor rota possível, caso o usuário não force alguma outra
+Consolidar o pedido
+
+# backend
+Buscar entregadores mais próximos da filial do pedido(ponto de partida)
+Criar uma fila dos entregadores em ordem de distância
+Gerenciar respostas dos entregadores, chamando sempre o próximo da fila
+Gerar resposta para a plataforma quando houver um aceite
+Havendo um aceite, gerar protocolo
+Manter informações no protocolo
+Registrar protocolo em histórico da empresa e do entregador
+
+# Entregador
+Tornar disponível para pedidos
+Enviar o pedido consolidado
+Gerar a rota de acordo com a regra de prioridade
+Impedir entrega caso o entregador não esteja à mais de 2mins à menos de 30m
+Registrar cada entrega no protocolo
+Creditar cada entrega no protocolo
+Registrar a movimentação do motoboy no protocolo
+Registrar a última entrega como histórico consolidado em ambos atores

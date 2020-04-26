@@ -1,0 +1,21 @@
+Mobile
+
+Publico alvo: Entregador
+
+# Conta
+Cadastrar e Acessar conta
+Recuperar Conta
+
+# Principal
+Ficar disponível para Pedidos
+Localização em tempo real do dispositivo
+Comunicação com a empresa(Levoae)
+Trocar informações do perfil
+
+# Em corrida
+Ter lista de endereços disponível
+Visualizar detalhes do cliente corrente
+- nome, telefone, endereço, referencia e encomenda
+Marcar como concluido estando 2min+ a menos de 30m de distancia do endereço
+Creditar ao motoboy à cada entrega
+Ficar disponível ao fim da corrida
