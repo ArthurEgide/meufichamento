@@ -3,7 +3,6 @@
   <div>
     <form action="do_login" method="post" ref="form_login" id="form_login">
       <p>E-mail</p>
-      <p>{{test}}</p>
       <input 
         type="email" 
         v-model="email"
@@ -28,9 +27,13 @@ export default {
   data() {
     return {
       email: '',
-      password: '',
-      test: g.TESTE
+      password: ''
     };
+  },
+  computed: {
+    username() {
+      return this.$route.params.username
+    }
   },
   methods: {
     login: function() {
@@ -41,7 +44,7 @@ export default {
           (user) =>{
             console.log("Logado com sucesso")
             console.log(user.user)
-            this.$router.replace("home")
+            this.$router.push('/')
           },
           (err) =>{
             alert("A unexpected thing happen")
