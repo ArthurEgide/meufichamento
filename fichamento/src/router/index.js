@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import BookRegister from '../views/RegisterBook.vue'
+import NoteRegister from '../views/RegisterNote.vue'
 import firebase from 'firebase'
 
 Vue.use(VueRouter)
@@ -37,6 +38,14 @@ const routes = [
     path: '/register/book',
     name: 'Register Book',
     component: BookRegister,
+    meta: {
+      requeresAuth: true
+    }
+  },
+  {
+    path: '/register/book/note',
+    name: 'Register Note',
+    component: NoteRegister,
     meta: {
       requeresAuth: true
     }
