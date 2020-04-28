@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import BookRegister from '../views/RegisterBook.vue'
 import firebase from 'firebase'
 
 Vue.use(VueRouter)
@@ -31,6 +32,14 @@ const routes = [
     name: 'Register',
     component: Register,
     component: () => import(/* webpackChunkName: "about" */ '../views/Register.vue')
+  },
+  {
+    path: '/register/book',
+    name: 'Register Book',
+    component: BookRegister,
+    meta: {
+      requeresAuth: true
+    }
   }
 ]
 
@@ -40,30 +49,10 @@ const router = new VueRouter({
   routes
 })
 
-// router.beforeEach((to, from, next)=>{
-//   const currentUser = firebase.auth().currentUser;
-//   const reqAuth = to.matched.some(record => record.meta.reqAuth);
-
-//   console.log("before each")
-//   console.log("from:",  from)
-//   console.log("to:",  to)
-//   if(to.name !== 'Login'   && !currentUser){
-  //     console.log("LOGIN")
-  //     next({
-    //       path: "/register"
-    //     })
-    //   } 
-    //   else {
-      //     console.log("NEXT")
-      //     next({
-        //       path: "/home"
-        //     })
-        //   }
-        // })
-        
 router.beforeEach((to, from, next) => {
   const currentUser = firebase.auth().currentUser;
-  console.log(currentUser)
+  console.log("Navegando de: " , from)
+  console.log("Navegando para: " , to)
   if (to.name !== 'Login' && !currentUser) next({ name: 'Login' })
   if ((to.name == 'Login' || to.name == 'Register') && currentUser) next({ name: 'Home' })
   else next()
