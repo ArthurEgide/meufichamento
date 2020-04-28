@@ -1,20 +1,26 @@
 <template>
   <div>
-  <div>
-    <form action="do_login" method="post" ref="form_login" id="form_login">
-      <p>E-mail</p>
-      <input 
-        type="email" 
-        v-model="email"
+    <div>
+      <form 
+        action="login"
+        method="post" 
+        ref="form_login" 
+        id="form_login"
         >
-      <p>Senha</p>
-      <input 
-      type="password" 
-      v-model="password"
-      >
-    </form><br>
-      <button @click="login">Entrar</button>
-  </div>
+        <p>E-mail</p>
+        <input 
+          type="email" 
+          autocomplete="email"
+          v-model="email"
+          >
+        <p>Senha</p>
+        <input 
+        type="password" 
+        v-model="password"
+        >
+      </form><br>
+        <button @click="login">Entrar</button>
+    </div>
   </div>
 </template>
 
