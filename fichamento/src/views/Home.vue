@@ -21,8 +21,10 @@
               <!-- Elementos EDIÇÃO das EDIÇÕES-->  
               <div v-for="(edition, kEdition, iEdition) in editions" v-bind:key="edition">
                 
-                <p class="edition">{{Object.keys(editions)[iEdition]}}</p>
-
+                <!-- <p class="edition">{{Object.keys(editions)[iEdition]}}</p> -->
+                <button class="edition"
+                  @click="fichar([Object.keys(authors)[iAuthor], Object.keys(titles)[iTitle], Object.keys(editions)[iEdition]])"
+                >{{Object.keys(editions)[iEdition]}}</button>
               </div>
             </div>
           </div>
@@ -67,9 +69,27 @@ export default {
           }
         )
     },
-    goto: function(path){
-      this.$router.replace(path)
-    }
+    fichar: function(book){
+
+      firebase.database().ref()
+      .child("users")
+      .child(firebase.auth().currentUser.uid)
+      .child("library/")
+      .child("authors/" + book[0])
+      .child("titles/" + book[1])
+      .child("editions/" + book[2])
+      .once("value")
+      .then( quotes => {
+        this.$router.push({
+          name: "Register Note",
+          params: { 
+            oldQuotes: quotes.val(),
+            path: `users/${firebase.auth().currentUser.uid}/library/authors/${book[0]}/titles/${book[1]}/editions/${book[2]}`}
+          })
+
+      })
+
+    },
   },
   beforeCreate: function () {
     firebase.database().ref()
@@ -97,7 +117,7 @@ export default {
 }
 
 .edition {
-  background-color: blueviolet;
+  background-color: rgb(202, 156, 245);
 }
 
 p {
